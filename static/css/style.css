@@ -1,0 +1,82 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@100;200;300;400;500;600;700&display=swap');
+
+
+body {
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+}
+.bodys{
+    background: rgba(41, 43, 41, 0.945);
+}
+h4{
+    padding: 5px;
+}
+input{
+    width: 80% !important;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background-color: rgba(235, 225, 225, 0.616);
+    border-radius: 16px 0px 16px 0px;
+    border-bottom: 3px solid #76769cb6;
+    color: #0f0f0f;
+    font-size: 20px;
+    font-weight: 300;
+    transition: 0.2s ease-out;
+
+}
+.requiredField{
+    margin-bottom: 2rem !important;
+    width: 6rem;
+    font-size: 16px;
+    font-weight: bolder;
+    
+}
+.select{
+    width: 40%;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background-color: rgba(235, 225, 225, 0.616);
+    border-radius: 16px 0px 16px 0px;
+    border-bottom: 3px solid #76769cb6;
+    color: #0f0f0f;
+    font-size: 20px;
+    font-weight: 300;
+    transition: 0.2s ease-out;
+}
+.textarea{
+    width: 80% !important;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background-color: rgba(235, 225, 225, 0.616);
+    border-radius: 16px 0px 16px 0px;
+    border-bottom: 3px solid #76769cb6;
+    color: #0f0f0f;
+    font-size: 20px;
+    font-weight: 300;
+    transition: 0.2s ease-out;
+}
+    
+.form-bodys{
+    color: rgb(0, 0, 0);
+    background: rgba(247, 242, 242, 0.767) !important;
+}
+
+
+.submit-btn{
+    margin-top: 1rem;
+    margin-left: 5rem !important;
+}
+/* form back btn and submit btn  */
+.edit-container{
+    width: 50% !important;
+}

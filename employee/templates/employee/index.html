@@ -1,0 +1,45 @@
+{% extends "employee/base.html" %}
+
+{% block content%}
+<table class="table ">
+    <thead class="border-bottom font-weidth-bold thead-dark">
+        <tr>
+            <th>Full Name</th>
+            <th>Emp.Id </th>
+            <th class="text-center">Phone</th>
+            <th class="text-center" >Position</th>
+            <th class="text-center">Description</th>
+            <th>Date</th>
+            <th>view</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in  employee_info_list %}
+        <tr>
+            <td>{{employee.full_name}}</td>
+            <td>{{employee.emp_id}}</td>
+            <td>{{employee.phone}}</td>
+            <td>{{employee.position}}</td>
+            <td class="text-justify">{{employee.description}}</td>
+            <td>{{employee.date}}</td>
+            <td>
+                <a class="btn btn-secondary" href="{% url 'views_info' employee.id %}">view</a>
+            </td>
+            <td>
+                <a class="btn btn-secondary" href="{% url 'employee_info_update' employee.id %}">
+                    <i class="fas fa-edit"></i> </a>
+            </td>
+            
+            <td>        
+                <a href="{% url 'confirm_delete' employee.id %}">
+                    <i class="fas fa-trash fa-lg text-danger"></i>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a class="btn btn-outline-success float-right mb-5" href="{% url 'employee_form' %}"> Add New</a>
+{% endblock content%}

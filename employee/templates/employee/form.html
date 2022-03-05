@@ -1,0 +1,14 @@
+{% extends "employee/base.html" %}
+{% load crispy_forms_tags %}
+
+    {% block content%}
+    <form class="forms-edition" action="" method="POST" autocomplete="off" >
+        <h4 class="text-center text-info mb-5">Fill-Up Form</h4>
+        {% csrf_token %}
+        {{form|crispy}} 
+        <div class="container edit-container">
+            <button type="submit" class=" p-2  btn btn-primary btn-sm btn-block " value="submit"><i class="fas fa-database text-danger"></i> Submit</button>
+            <a href= "{% url 'employee_info_list_insert' %}" class=" p-2 btn btn-secondary btn-sm btn-block"><i class="fas fa-stream text-danger"></i> Back to list</a>
+       </div>
+    </form>
+    {% endblock content%}
