@@ -33,7 +33,7 @@
             </td>
             
             <td>        
-                <a href="{% url 'confirm_delete' employee.id %}">
+                <a class="btn btn-outline-secondary" href="{% url 'confirm_delete' employee.id %}">
                     <i class="fas fa-trash fa-lg text-danger"></i>
                 </a>
             </td>
@@ -41,5 +41,5 @@
         {% endfor %}
     </tbody>
 </table>
-<a class="btn btn-outline-success float-right mb-5" href="{% url 'employee_form' %}"> Add New</a>
+<a class="btn btn-outline-secondary float-right mb-5" href="{% url 'employee_form' %}">Add New</a>
 {% endblock content%}
