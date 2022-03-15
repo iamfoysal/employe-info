@@ -9,8 +9,10 @@
     <h4>Description : {{show.description}}</h4>
     <h4 class="text-danger"> Submit Date : {{show.date}}</h4>
 </div>
+
 <div class="container edit-container">
     <a href="{% url 'employee_info_list_insert' %}" class=" mt-5 p-2 btn btn-secondary btn-sm btn-block"><i
             class="fas fa-stream text-danger"></i> Back to list</a>
+    <!-- <button class="mt-5" onclick="window.print()">Print this page</button> -->
  </div>
 {% endblock content%}

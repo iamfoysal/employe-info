@@ -7,7 +7,7 @@
             <th>Full Name</th>
             <th>Emp.Id </th>
             <th class="text-center">Phone</th>
-            <th class="text-center" >Position</th>
+            <th class="text-center">Position</th>
             <th class="text-center">Description</th>
             <th>Date</th>
             <th>view</th>
@@ -17,6 +17,7 @@
     </thead>
     <tbody>
         {% for employee in  employee_info_list %}
+
         <tr>
             <td>{{employee.full_name}}</td>
             <td>{{employee.emp_id}}</td>
@@ -31,11 +32,40 @@
                 <a class="btn btn-secondary" href="{% url 'employee_info_update' employee.id %}">
                     <i class="fas fa-edit"></i> </a>
             </td>
-            
-            <td>        
-                <a class="btn btn-outline-secondary" href="{% url 'confirm_delete' employee.id %}">
-                    <i class="fas fa-trash fa-lg text-danger"></i>
-                </a>
+
+            <td>
+                <!-- Delete system start -->
+                <form action="{% url 'employee_delete' employee.id %}" method="POST">
+                    {% csrf_token %}
+                    <!-- Modal  start-->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Delete Confirmations</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"><i style="color: brown;" class="fas fa-times-circle"></i></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Are you sure to delete? {{employee.full_name}}</p>
+                                    <p>Employee Id: {{employee.emp_id}}</p>
+                
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">confirm Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Modal End-->
+                    <button type="button" class="btn btn-primary btn-outline-secondary" data-toggle="modal" data-target="#exampleModalCenter">
+                        <i class="fas fa-trash fa-lg text-danger"></i>
+                    </button>
+                </form>
+                <!-- delete system end  -->
             </td>
         </tr>
         {% endfor %}

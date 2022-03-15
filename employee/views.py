@@ -36,11 +36,15 @@ def employee_info_view(request, pk):
         "show": show
     })
 
+def employee_info_delete(request, id):
+    employee = Employee.objects.get(pk=id)
+    employee.delete()
+    return redirect('/')
 
-def delete_confirm(request, pk):
-    employee = get_object_or_404(Employee, pk=pk)
-    if request.method == 'POST':
-        employee.delete()
-        return redirect('/')
-    context ={'employee': employee}
-    return render (request, 'employee/delete.html', context)
+# def delete_confirm(request, pk):
+#     employee = get_object_or_404(Employee, pk=pk)
+#     if request.method == 'POST':
+#         employee.delete()
+#         return redirect('/')
+#     context ={'employee': employee}
+#     return render (request, 'employee/delete.html', context)

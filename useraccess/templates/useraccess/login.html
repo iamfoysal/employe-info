@@ -1,0 +1,25 @@
+{% extends "employee/base.html" %}
+
+{% block content%}
+<div class="">
+    <h2 class="">Login to your account</h2>
+    <form action="" method="POST" class="">
+            {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username" class="block">User Name</label>
+                    <input type="text" name="username" id="username" placeholder="User Name" class="form-control" required>
+                </div>
+
+                 <div class="mb-3">
+                    <label for="password" class="block">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password" class="form-control" required>
+                </div>
+
+            <div class="flex justify-between items-center">
+                 <a href="{% url 'register' %}" class="">Dont' have an account?</a>
+                 <button type="submit" class="">Login</button>
+            </div>
+       </form>
+</div>
+
+{% endblock%}
