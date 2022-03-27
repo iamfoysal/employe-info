@@ -1,0 +1,6 @@
+asgiref==3.5.0
+Django==4.0.3
+django-crispy-forms==1.14.0
+mysqlclient==2.1.0
+sqlparse==0.4.2
+tzdata==2021.5
