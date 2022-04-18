@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Employee Sign-up{% endblock %}
+{% block content %}
+
+<body>
+    <div class="container">
+        <div class="mt-5">
+            <div class="jumbotron form-bodys">
+
+                <div style=" display: flex; align-items: center; justify-content: center">
+                    <div class="card login-form">
+                        <h3 class="card-title text-center">User Signup </h3>
+                        <hr class="my-4">
+                        <div class="card-text">
+                            <!-- <div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div>  -->
+                            <form method="POST" class="singin-up-form">
+                                {% csrf_token %}
+
+                                {% for field in form %}
+                                <div class="form-group p-2">
+                                    <label >{{ field.label_tag }} </label>
+                                    {{ field }}
+                                </div>
+                                <div>
+                                    {{ field.errors }}
+                                </div>
+                                {% endfor %}
+                                <button type="submit"
+                                    class="singin-up-form-btn btn btn-primary btn-block">Submit</button>
+                                <div class="sign-up">Already have an account? <a href="{% url 'signin' %}">login</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+</div>
+<body>
+    {% endblock%}

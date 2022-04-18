@@ -1,18 +1,41 @@
-{% extends "employee/base.html" %}
+{% extends "base.html" %}
 
 {% block content%}
-<div class="container bg-dark text-white p-5 ">
-    <h3>Name : {{show.full_name}}</h3>
-    <h4>Employee Id : {{show.emp_id}}</h4>
-    <h4>Phone : {{show.phone}}</h4>
-    <h4>Position : {{show.position}}</h4>
-    <h4>Description : {{show.description}}</h4>
-    <h4 class="text-danger"> Submit Date : {{show.date}}</h4>
-</div>
+<body class="bodys">
+    <div class="container">
+        <div class="mt-5">
+            <div class="jumbotron form-bodys">
+                <h1 class="display-4 text-center font-weidth-bold">Hello, Tweetech!</h1>
+                <p class="lead  text-center">Tweetech Agency All Empoloye's Informations</p>
+                <br>
+                <hr class="my-4">
 
-<div class="container edit-container">
-    <a href="{% url 'employee_info_list_insert' %}" class=" mt-5 p-2 btn btn-secondary btn-sm btn-block"><i
-            class="fas fa-stream text-danger"></i> Back to list</a>
-    <!-- <button class="mt-5" onclick="window.print()">Print this page</button> -->
- </div>
+                
+                <div class="container text-black p-5 ">
+                    <h5> <strong class="label-custrom-in-view">Name :</strong>{{show.full_name}}</h5>
+                    <p> <strong class="label-custrom-in-view">Father's Name :</strong>{{show.fathers_name}}</p>
+                    <p> <strong class="label-custrom-in-view">Mother's Name :</strong>{{show.mothers_name}}</p>
+                    <p> <strong class="label-custrom-in-view">Employee Id :</strong>{{show.emp_id}}</p>
+                    <p> <strong class="label-custrom-in-view">Position :</strong>{{show.position}}</p>
+                    <p> <strong class="label-custrom-in-view">Join Date :</strong>{{show.join_date}}</p>
+                    <p> <strong class="label-custrom-in-view">E-mail :</strong>{{show.email}}</p>
+                    <p> <strong class="label-custrom-in-view">Phone :</strong>{{show.phone}}</p>
+                    <p> <strong class="label-custrom-in-view">Date Of Birth :</strong>{{show.date_of_birth}}</p>
+                    <p> <strong class="label-custrom-in-view">Address :</strong>{{show.address}}</p>
+                    <p> <strong class="label-custrom-in-view">Description :</strong>{{show.description}}</p>
+                    <p class="text-danger"> Submit Date : {{show.date}}</p>
+                
+                
+                
+                </div>
+                
+                <div class="container edit-container">
+                    <a href="{% url 'employee_info_list_insert' %}" class=" mt-5 p-2 btn btn-secondary btn-sm btn-block"><i
+                            class="fas fa-stream text-danger"></i> Back to list</a>
+                    <button class="mt-5" onclick="window.print()">Print this page</button>
+                </div>
+               
+            </div>
+        </div>
+    </div>
 {% endblock content%}
