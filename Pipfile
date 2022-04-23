@@ -8,6 +8,7 @@ django = "*"
 mysqlclient = "*"
 django-crispy-forms = "*"
 pillow = "*"
+reportlab = "*"
 
 [dev-packages]
 

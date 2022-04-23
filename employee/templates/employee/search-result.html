@@ -34,22 +34,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for employee in  employee_info_list %}
+                        {% for result in  results %}
 
                         <tr>
                             <td>{{forloop.counter}}</td>
-                            <td>{{employee.full_name}}</td>
-                            <td>{{employee.emp_id}}</td>
+                            <td>{{result.full_name}}</td>
+                            <td>{{result.emp_id}}</td>
                             <!-- <td></td> -->
-                            <td>{{employee.position}}</td>
+                            <td>{{result.position}}</td>
                             <!-- <td class="text-justify"></td> -->
-                            <td>{{employee.join_date}}</td>
+                            <td>{{result.join_date}}</td>
                             <td>
-                                <a class="btn btn-secondary" href="{% url 'views_info' employee.id %}">view</a>
+                                <a class="btn btn-secondary" href="{% url 'views_info' result.id %}">view</a>
                             </td>
                             {% if request.user.is_authenticated %}
                             <td>
-                                <a class="btn btn-secondary" href="{% url 'employee_info_update' employee.id %}">
+                                <a class="btn btn-secondary" href="{% url 'employee_info_update' result.id %}">
                                     <i class="fas fa-edit"></i> </a>
                             </td>
 
@@ -57,7 +57,7 @@
                                 
                                 <!-- Delete system start -->
                                 
-                                <form action="{% url 'employee_delete' employee.id %}" method="POST">
+                                <form action="{% url 'employee_delete' result.id %}" method="POST">
                                     {% csrf_token %}
                                     <!-- Modal  start-->
                                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
@@ -74,8 +74,8 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p>Are you sure to delete? {{employee.full_name}}</p>
-                                                    <p>Employee Id: {{employee.emp_id}}</p>
+                                                    <p>Are you sure to delete? {{result.full_name}}</p>
+                                                    <p>Employee Id: {{result.emp_id}}</p>
 
                                                 </div>
                                                 <div class="modal-footer">
@@ -103,8 +103,6 @@
                     </tbody>
                 </table>
                 <a class="btn btn-outline-secondary float-right mb-5" href="{% url 'employee_form' %}">Add New</a>
-
-
 
             </div>
         </div>

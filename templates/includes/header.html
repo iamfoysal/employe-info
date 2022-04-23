@@ -11,7 +11,7 @@
           <a class="nav-link" href="{% url 'employee_info_list_insert' %}"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-cogs"></i> Features</a>
+          <a class="nav-link" href="https://www.tweetech.agency/"><i class="fas fa-cogs"></i> Features</a>
         </li>
 
         {% if request.user.is_authenticated %}
@@ -28,8 +28,9 @@
       
 
       </ul>
-      <form class=" mr-5 my-2 my-lg-0 d-flex">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <form class=" mr-5 my-2 my-lg-0 d-flex" action="" method="POST">
+        {% csrf_token %}
+        <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
