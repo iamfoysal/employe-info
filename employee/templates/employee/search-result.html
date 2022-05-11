@@ -9,8 +9,8 @@
     <div class="container">
         <div class="mt-5">
             <div class="jumbotron form-bodys">
-                <h1 class="display-4 text-center font-weidth-bold">Hello, Tweetech!</h1>
-                <p class="lead  text-center">Tweetech Agency All Empoloye's Informations</p>
+                <!-- <h1 class="display-4 text-center font-weidth-bold">Tweetech!</h1> -->
+                <p class="lead  text-center">*Your search result here*</p>
                 <br>
                 <hr class="my-4">
 
@@ -24,7 +24,7 @@
                             <!-- <th scope="col"  class="text-center"></th>-->
                             <th>Position</th>
                             <!-- <th scope="col"  class="text-center"></th>  -->
-                            <th scope="col" >Join Date</th>
+                            <th scope="col" >Joining Date</th>
                             <th scope="col" >view</th>
                             {% if request.user.is_authenticated %}
                             <th scope="col" >Edit</th>
@@ -56,10 +56,10 @@
                             <td>
                                 
                                 <!-- Delete system start -->
-                                
-                                <form action="{% url 'employee_delete' result.id %}" method="POST">
+                                <!-- Modal  start-->
+                                <!-- <form action="" method="POST">
                                     {% csrf_token %}
-                                    <!-- Modal  start-->
+                                    
                                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
                                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -87,22 +87,24 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Modal End-->
-                                    
                                     <button type="button" class="btn btn-primary btn-outline-secondary"
                                         data-toggle="modal" data-target="#exampleModalCenter">
                                         <i class="fas fa-trash fa-lg text-danger"></i>
                                     </button>
-                                </form>
+                                </form> -->
                                 <!-- delete system end  -->
+                                <a class="btn btn-outline-secondary" href="{% url 'confirm_delete' result.id %}">
+                                    <i class="fas fa-trash fa-lg text-danger"></i>
+                                </a>
                             </td>
-                            {% else %}
-                            {% endif %}
+                            <!-- {% else %}
+                            {% endif %} -->
+                            
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
-                <a class="btn btn-outline-secondary float-right mb-5" href="{% url 'employee_form' %}">Add New</a>
+                <!-- <a class="btn btn-outline-secondary float-right mb-5" href="{% url 'employee_form' %}">Add New</a> -->
 
             </div>
         </div>

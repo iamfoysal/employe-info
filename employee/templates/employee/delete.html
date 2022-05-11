@@ -6,13 +6,12 @@
     <div class="container">
         <div class="mt-5">
             <div class="jumbotron form-bodys">
-                <h1 class="display-4 text-center font-weidth-bold">Hello, Tweetech!</h1>
-                <p class="lead  text-center">Tweetech Agency All Empoloye's Informations</p>
+                <h2 class="display-4 text-center font-weidth-bold">Empoloyee Informations Remove</h2>
+                <p class="lead  text-center">Are you sure to delete?!</p>
                 <br>
                 <hr class="my-4">
-
-
-                <h3>Are you sure you want to delete this "{{ employee.full_name }}"?</h3>
+                <h4>Employee Name : {{ employee.full_name }}</h4>
+                <h4>Employee Id : {{ employee.emp_id }}</h4>
                 <form class="mt-5 mb-5" action="" method="POST">
                     {% csrf_token %}
                     <a class="btn btn-success float-right d-inline mr-5"

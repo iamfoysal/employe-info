@@ -1,7 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-
 from .forms import employeeForm
 from .models import Employee
 # import io
@@ -14,13 +13,14 @@ from .models import Employee
 
 
 def employee_info_list(request):
+    employee = Employee.objects.all()
     if request.method == 'POST':
         search = request.POST.get('search')
         results = Employee.objects.filter(Q(full_name__icontains=search) | Q(emp_id__icontains=search) | Q(phone__icontains=search) | Q(email__icontains=search))
         context =  { 'results': results, 'search': search}
         return render(request, 'employee/search-result.html', context)
   
-    context = {'employee_info_list': Employee.objects.all()}
+    context = {'employee_info_list': employee }
     return render (request, "employee/index.html", context)
 
 
@@ -56,15 +56,20 @@ def employee_info_view(request, pk):
     })
     
 
-def employee_info_delete(request, id):
-    employee = Employee.objects.get(pk=id)
-    employee.delete()
-    return redirect('/')
+## use for modal
+
+# def employee_info_delete(request, pk):
+#     employee = Employee.objects.get(pk=pk)
+#     employee.delete()
+#     return redirect('/')
 
 
-# def search_result(request):
-#     if request.method == 'POST':
-#         search = request.POST.get('search')
-#         results = Employee.objects.filter(Q(full_name__icontains=search) | Q(emp_id__icontains=search))
-#         context =  { 'result': results, 'search': search}
-#         return render(request, 'employee/search-result.html', context)
+
+def delete_confirm(request, pk):
+    employee = get_object_or_404(Employee, pk=pk)
+    if request.method == 'POST':
+        employee.delete()
+        return redirect('/')
+    context ={'employee': employee}
+    return render (request, 'employee/delete.html', context)
+

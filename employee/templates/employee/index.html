@@ -47,7 +47,7 @@
                             <td>
                                 <a class="btn btn-secondary" href="{% url 'views_info' employee.id %}">view</a>
                             </td>
-                            {% if request.user.is_authenticated %}
+                            <!-- {% if request.user.is_authenticated %} -->
                             <td>
                                 <a class="btn btn-secondary" href="{% url 'employee_info_update' employee.id %}">
                                     <i class="fas fa-edit"></i> </a>
@@ -56,10 +56,10 @@
                             <td>
                                 
                                 <!-- Delete system start -->
-                                
-                                <form action="{% url 'employee_delete' employee.id %}" method="POST">
+                                <!-- Modal  start-->
+                                <!-- <form action="" method="POST">
                                     {% csrf_token %}
-                                    <!-- Modal  start-->
+                                    
                                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
                                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -74,9 +74,10 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p>Are you sure to delete? {{employee.full_name}}</p>
-                                                    <p>Employee Id: {{employee.emp_id}}</p>
-
+                                                    <p>Serial: {{ forloop.counter}} </p>
+                                                    <p>Are you sure to delete? {{ employee.full_name }}</p>
+                                                    <p>Employee Id: {{ employee.emp_id }}</p>
+                                                   
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
@@ -86,18 +87,21 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- Modal End-->
+                                    </div> 
+                                    
                                     
                                     <button type="button" class="btn btn-primary btn-outline-secondary"
                                         data-toggle="modal" data-target="#exampleModalCenter">
-                                        <i class="fas fa-trash fa-lg text-danger"></i>
+                                       <a href="{% url 'confirm_delete' employee.id %}"><i class="fas fa-trash fa-lg text-danger"></i></a> 
                                     </button>
-                                </form>
+                                </form> -->
                                 <!-- delete system end  -->
+                                <a class="btn btn-outline-secondary" href="{% url 'confirm_delete' employee.id %}">
+                                    <i class="fas fa-trash fa-lg text-danger"></i>
+                                </a>
                             </td>
-                            {% else %}
-                            {% endif %}
+                            <!-- {% else %}
+                            {% endif %} -->
                         </tr>
                         {% endfor %}
                     </tbody>

@@ -2,9 +2,9 @@ from django import forms
 from .models import Employee, Position, Gender
 
 class employeeForm(forms.ModelForm):
-    email = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Email'} ))
-    date_of_birth =forms.DateField(widget=forms.TextInput(attrs={'placeholder': 'YYYY/MM/DD'}))
-    join_date =forms.DateField(widget=forms.TextInput(attrs={'placeholder': 'YYYY/MM/DD'}))
+    email = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'E-mail'} ))
+    date_of_birth =forms.DateField(widget=forms.TextInput(attrs={'placeholder': 'YYYY-MM-DD'}))
+    join_date =forms.DateField(widget=forms.TextInput(attrs={'placeholder': 'YYYY-MM-DD'}))
     
     class Meta:
         model = Employee 
