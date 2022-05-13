@@ -32,8 +32,8 @@ class Employee(models.Model):
     email = models.CharField(max_length=255,null=True, blank=True)
     gender = models.ForeignKey(Gender,on_delete= models.CASCADE, null=True, blank=True)
     date_of_birth = models.DateField(null=True, blank=True)
-    address = models.CharField(max_length=500, null=True, blank=True)
-    description = models.TextField(max_length=500,null=True, blank=True )
+    address = models.CharField(max_length=5000, null=True, blank=True)
+    description = models.TextField(max_length=5000,null=True, blank=True )
     date = models.DateTimeField(auto_now_add=True)
 
     

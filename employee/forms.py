@@ -12,7 +12,8 @@ class employeeForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(employeeForm,self).__init__(*args, **kwargs)
-        self.fields['position'].empty_lable ="Select"
+        self.fields['position'].empty_label ="Select"
+        self.fields['gender'].empty_label= "Select"
         self.fields['position'].required = False 
         
         
