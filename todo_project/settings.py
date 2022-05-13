@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-!c#neab1!2&fbr964pb)2a3l&7dd0jzb8575n869)lv%=xm^ys
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -90,10 +90,17 @@ WSGI_APPLICATION = 'todo_project.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'employee_informations',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'employee_informations',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
