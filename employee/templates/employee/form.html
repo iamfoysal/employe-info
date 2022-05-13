@@ -13,9 +13,10 @@
                 <hr class="my-4">
 
                 <form class="forms-edition" action="" method="POST" autocomplete="off">
+                    {% csrf_token %}
                     <h4 class="text-center text-info ">Employee Form</h4>
                     <h4 class="text-center text-info mb-5">Fill-Up Form</h4>
-                    {% csrf_token %}
+
                     {{form|crispy}}
                     <div class="container edit-container">
                         <button type="submit" class=" p-2  btn btn-primary btn-sm btn-block " value="submit"><i

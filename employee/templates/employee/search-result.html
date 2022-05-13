@@ -21,9 +21,7 @@
                             <th scope="col" >SL.No</th>
                             <th scope="col" >Name</th>
                             <th scope="col" >Emp.Id </th>
-                            <!-- <th scope="col"  class="text-center"></th>-->
                             <th>Position</th>
-                            <!-- <th scope="col"  class="text-center"></th>  -->
                             <th scope="col" >Joining Date</th>
                             <th scope="col" >view</th>
                             {% if request.user.is_authenticated %}
@@ -34,15 +32,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for result in  results %}
-
+                        {% for result in results %}
                         <tr>
                             <td>{{forloop.counter}}</td>
                             <td>{{result.full_name}}</td>
                             <td>{{result.emp_id}}</td>
-                            <!-- <td></td> -->
                             <td>{{result.position}}</td>
-                            <!-- <td class="text-justify"></td> -->
                             <td>{{result.join_date}}</td>
                             <td>
                                 <a class="btn btn-secondary" href="{% url 'views_info' result.id %}">view</a>
@@ -54,58 +49,16 @@
                             </td>
 
                             <td>
-                                
-                                <!-- Delete system start -->
-                                <!-- Modal  start-->
-                                <!-- <form action="" method="POST">
-                                    {% csrf_token %}
-                                    
-                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLongTitle">Delete
-                                                        Confirmations</h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true"><i style="color: brown;"
-                                                                class="fas fa-times-circle"></i></span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <p>Are you sure to delete? {{result.full_name}}</p>
-                                                    <p>Employee Id: {{result.emp_id}}</p>
-
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Cancel</button>
-                                                    <button type="submit" class="btn btn-primary">confirm
-                                                        Delete</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="btn btn-primary btn-outline-secondary"
-                                        data-toggle="modal" data-target="#exampleModalCenter">
-                                        <i class="fas fa-trash fa-lg text-danger"></i>
-                                    </button>
-                                </form> -->
-                                <!-- delete system end  -->
                                 <a class="btn btn-outline-secondary" href="{% url 'confirm_delete' result.id %}">
                                     <i class="fas fa-trash fa-lg text-danger"></i>
                                 </a>
                             </td>
-                            <!-- {% else %}
-                            {% endif %} -->
-                            
+                             {% else %}
+                            {% endif %}
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
-                <!-- <a class="btn btn-outline-secondary float-right mb-5" href="{% url 'employee_form' %}">Add New</a> -->
-
             </div>
         </div>
     </div>
