@@ -55,7 +55,25 @@ nav li.active:before {
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
+.search-btnn{
+  width: 23% !important;
+  background: #ffffff;
+  font-size: 14px;
+  color: #818993;
+  border: 1px solid #5a83aadc;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+  border-radius: 5px;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.search-btnn:hover{
+  color: #000;
+  background: #c9c4c4;
+  border: 1px solid #336797dc;
 
+}
 /* nav end */
 
 /* view page */
