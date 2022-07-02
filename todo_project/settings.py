@@ -92,10 +92,26 @@ WSGI_APPLICATION = 'todo_project.wsgi.application'
 #     }
 # }
 
+
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'employee_informations',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ.get('employee_info'),
+#         'USER': os.environ.get('postgres'),
+#         'PASSWORD': os.environ.get('123'),
+#         'HOST': '127.0.0.1',
+#         'PORT': 5432,
+#     }
+# }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'Employee_info',
+#         'USER': 'postgres',
+#         'PASSWORD': '123',
+#         'HOST': '',
+#         'PORT': '5432',
 #     }
 # }
 
