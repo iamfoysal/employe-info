@@ -33,12 +33,20 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 ## 'jazzmin',
 INSTALLED_APPS = [
+    # 'admin_honeypot',
+    # 'grappelli',
+    # 'hijack',
+    'jet.dashboard',
+    'jet',
+    #  'baton',
     'django.contrib.admin',
+    # 'baton.autodiscover',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'import_export',
     'crispy_forms',
     "employee",
     "account"

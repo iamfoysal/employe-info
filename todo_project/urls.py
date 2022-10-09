@@ -18,7 +18,13 @@ from django.urls import path, include
 
 
 urlpatterns = [
+    # path('hijack/', include('hijack.urls')),
+    # path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+     
+    path('jet/', include('jet.urls', 'jet')), 
+    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')), 
     path('admin/', admin.site.urls),
+    # path('baton/', include('baton.urls')),
     path('', include("account.urls")),
     path('', include("employee.urls")),
 ]
