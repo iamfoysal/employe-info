@@ -1,6 +1,6 @@
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
-from employee.models import Position, Employee, Gender
+from employee.models import Position, Employee, Gender, Webhook
 
 
 
@@ -25,3 +25,10 @@ admin.site.register(Employee, EmployeeAdmin ) #call EmployeeAdmin this class sho
 # admin.site.register( Position, PositionResource)
 admin.site.register(Position, PositionAdmin)
 admin.site.register( Gender)
+
+class WebhookAdmin(admin.ModelAdmin):
+    list_display = ['id','receive_response', 'created_at', 'updated_at']
+  
+    list_per_page = 100
+
+admin.site.register(Webhook, WebhookAdmin)  

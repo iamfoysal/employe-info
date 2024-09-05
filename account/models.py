@@ -15,3 +15,16 @@ class CreateCustomer(models.Model):
         return str(self.user)
         
    
+
+
+class Quiz(models.Model):
+    question = models.CharField(max_length=255, blank=True, null=True)
+
+
+class Option(models.Model):
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    user= User()
+    option = models.CharField(max_length=255, blank=True, null=True)
+    is_correct = models.BooleanField(default=False)
+    user_answer = models.BooleanField(default=False)
+    
