@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}Employee Create{% endblock %}
+
+
+{% block content%}
+
+<div class="container mt-5">
+    <h1>Add Employee</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="full_name">Full Name:</label>
+            <input type="text" class="form-control" name="full_name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fathers_name">Father's Name:</label>
+            <input type="text" class="form-control" name="fathers_name">
+        </div>
+
+        <div class="form-group">
+            <label for="mothers_name">Mother's Name:</label>
+            <input type="text" class="form-control" name="mothers_name">
+        </div>
+
+        <div class="form-group">
+            <label for="emp_id">Employee ID:</label>
+            <input type="text" class="form-control" name="emp_id">
+        </div>
+
+        <div class="form-group">
+            <label for="position">Position:</label>
+            <select class="form-control" name="position">
+                {% for position in positions %}
+                <option value="{{ position.id }}">{{ position.title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="join_date">Join Date:</label>
+            <input type="date" class="form-control" name="join_date">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" class="form-control" name="phone">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select class="form-control" name="gender">
+                {% for gender in genders %}
+                <option value="{{ gender.id }}">{{ gender.gender }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="date_of_birth">Date of Birth:</label>
+            <input type="date" class="form-control" name="date_of_birth">
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea class="form-control" name="address" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea class="form-control" name="description" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+
+{% endblock %}

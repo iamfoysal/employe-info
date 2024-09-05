@@ -1,13 +1,16 @@
 # Byte-compiled / optimized / DLL files
-
+db.sqlite3
 project-info.txt
 __pycache__/
 *.py[cod]
 *$py.class
-
+*.zip
+data/db/
 # C extensions
 *.so
-
+*.sqlite3
+db.sqlite3
+staticfiles/
 # Distribution / packaging
 .Python
 build/
